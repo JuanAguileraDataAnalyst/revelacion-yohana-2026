@@ -98,9 +98,8 @@
   h2.seccion{font-family:"Fredoka",system-ui,sans-serif;font-weight:700;color:var(--gold);font-size:clamp(1.6rem,6.4vw,2.1rem);line-height:1.15;margin:34px 0 16px}
   h2.seccion.chica{font-size:clamp(1.3rem,5.2vw,1.6rem);margin:30px 0 4px}
   .sub-seccion{margin:0 0 14px;color:var(--muted);font-size:.95rem;font-weight:600}
-  .horas{margin:0 auto;max-width:640px;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
-  .hora{grid-column:span 2;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--acento,var(--line));border-radius:14px;padding:9px 4px 10px}
-  .hora:nth-child(n+4){grid-column:span 3}
+  .horas{margin:0 auto;max-width:640px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .hora{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--acento,var(--line));border-radius:14px;padding:9px 4px 10px}
   .hora .iconos{display:flex;align-items:center;justify-content:center;gap:7px;margin-bottom:4px}
   .hora .emoji{font-size:1.25rem;line-height:1}
   .bandera{position:relative;width:34px;height:23px;border-radius:4px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.3),0 1px 3px rgba(0,0,0,.3)}
@@ -114,9 +113,12 @@
   .hora .pais{font-size:.95rem;font-weight:700;color:#fff}
   .hora .tiempo{font-family:"Fredoka",system-ui,sans-serif;font-size:clamp(1.5rem,6vw,2rem);font-weight:600;color:var(--gold);line-height:1.15}
   .hora .saludo{font-style:italic;font-weight:600;font-size:.92rem;color:var(--muted);line-height:1.2;margin-top:1px}
+  .b-us{background:repeating-linear-gradient(#B22234 0 7.69%,#fff 7.69% 15.38%)}
+  .b-us::after{content:"";position:absolute;left:0;top:0;width:46%;height:54%;background:radial-gradient(circle,#fff .55px,transparent .8px) 0 0/3px 3px,#3C3B6E}
+  .nota-zonas{margin:10px auto 0;max-width:560px;font-size:.84rem;font-weight:600;color:var(--muted);line-height:1.45}
+  .nota-zonas strong{color:var(--ink);font-weight:800}
   @media (min-width:561px){
-    .horas{grid-template-columns:repeat(5,1fr)}
-    .hora,.hora:nth-child(n+4){grid-column:auto}
+    .horas{grid-template-columns:repeat(6,1fr)}
   }
 
   /* ===== Cuenta regresiva ===== */
@@ -247,7 +249,7 @@
 
     <p class="frase">Una vida empieza y otras se iluminan…<br>El amor se multiplica y la familia crece, gracias por ser parte de esta alegría.</p>
 
-    <h2 class="seccion chica">Familia conectada desde 5 países 🌎</h2>
+    <h2 class="seccion chica">Familia conectada desde 6 países 🌎</h2>
     <p class="sub-seccion">Hora local de cada país</p>
     <div class="horas" aria-label="Horarios por país">
       <div class="hora" style="--acento:#2FBF71">
@@ -270,7 +272,12 @@
         <div class="iconos"><span class="bandera b-ca" aria-hidden="true"></span><span class="emoji" aria-hidden="true">🍁</span></div>
         <div class="pais">Canadá</div><div class="tiempo">11:00</div><div class="saludo">Hello!</div>
       </div>
+      <div class="hora" style="--acento:#7A8CFF">
+        <div class="iconos"><span class="bandera b-us" aria-hidden="true"></span><span class="emoji" aria-hidden="true">🗽</span></div>
+        <div class="pais">EE. UU.</div><div class="tiempo">11:00</div><div class="saludo">Hey!</div>
+      </div>
     </div>
+    <p class="nota-zonas"><strong>EE. UU. y Canadá: hora del Este.</strong> Centro 10:00 · Montaña 09:00 · Pacífico 08:00</p>
 
     <div class="cuenta" role="timer" aria-label="Cuenta regresiva para el despegue">
       <p class="etiqueta">Cuenta regresiva 🚀</p>
@@ -373,7 +380,7 @@
     '',
     '📆 Domingo 1 de noviembre de 2026',
     '⏰ Hora actualizada: 4:00 pm de Lisboa',
-    '🇵🇹 Portugal 16:00 · 🇳🇱 Holanda 17:00 · 🇮🇹 Italia 17:00 · 🇨🇴 Colombia 11:00 · 🇨🇦 Canadá 11:00',
+    '🇵🇹 Portugal 16:00 · 🇳🇱 Holanda 17:00 · 🇮🇹 Italia 17:00 · 🇨🇴 Colombia 11:00 · 🇨🇦 Canadá 11:00 · 🇺🇸 EE. UU. 11:00 (hora del Este; Centro 10:00, Montaña 09:00, Pacífico 08:00)',
     '',
     '📹 Entra aquí (Google Meet): ' + MEET,
     'Respaldo, solo si el Meet falla: ' + JITSI,
@@ -408,7 +415,7 @@
       'DTSTART:20261101T160000Z',
       'DTEND:20261101T170000Z',
       'SUMMARY:Revelación Explosiva de Género del bebé de Yohana y Alejo',
-      'DESCRIPTION:Reunión virtual en familia con Daniela y Juan como anfitriones. Hora actualizada: 4:00 pm Lisboa = Portugal 16:00 · Holanda 17:00 · Italia 17:00 · Colombia 11:00 · Canadá 11:00. Entra por Google Meet: '+MEET+' Respaldo: '+JITSI,
+      'DESCRIPTION:Reunión virtual en familia con Daniela y Juan como anfitriones. Hora actualizada: 4:00 pm Lisboa = Portugal 16:00 · Holanda 17:00 · Italia 17:00 · Colombia 11:00 · Canadá 11:00 · EE. UU. 11:00 (hora del Este; Centro 10:00, Montaña 09:00, Pacífico 08:00). Entra por Google Meet: '+MEET+' Respaldo: '+JITSI,
       'LOCATION:Videollamada Google Meet: '+MEET,
       'URL:'+MEET,
       'BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:En 30 minutos empieza la revelación explosiva del bebé de Yohana y Alejo','END:VALARM',
